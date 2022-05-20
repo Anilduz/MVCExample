@@ -1,0 +1,60 @@
+﻿@model List<Student>
+@{
+    ViewData["Title"] = "Student";
+}
+<h1>@ViewData["Student"]</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Student Name</th>
+        <th>Student Surname</th>
+        <th>Student Id</th>
+        <th>Student Mail</th>
+        <th>Student Phone Number</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.stuName</td>
+            <td>@item.stuSurname</td>
+            <td>@item.studentId</td>
+            <td>@item.stuMail</td>
+            <td>@item.stuPhoneNumber</td>
+
+        </tr>
+    }
+</table>
+<hr />
+<br />
+<h1>Öğrenci Ekle</h1>
+<form asp-controller="Home" asp-action="AddStudent" method="post">
+    <div>
+        <label for="Id">Id:</label><br>
+        <input type="text" class="form-control" placeholder="Id" id="id" name="id" value=""><br>
+
+        <label for="stuName">Student Name:</label><br>
+        <input type="text" class="form-control" placeholder="Student Name" id="Name" name="stuName" value=""><br>
+
+        <label for="stuSurname">Student Surname:</label><br>
+        <input type="text" class="form-control" placeholder="Student Surname" id="Surname" name="stuSurname" value=""><br>
+
+        <label for="studentId">Student Id:</label><br>
+        <input type="text" class="form-control" placeholder="Student Id" id="stuId" name="studentId" value=""><br>
+
+        <label for="stuMail">Student Mail:</label><br>
+        <input type="text" class="form-control" placeholder="Student Mail" id="mail" name="stuMail" value=""><br>
+
+        <label for="stuPhone">Student Phone Number:</label><br>
+        <input type="text" class="form-control" placeholder="Student Phone Number" id="stuPhoneNumber" name="Phone" value=""><br>
+
+        <br />
+        <input id="Submit2" type="submit" value="submit" class="btn btn-primary" />
+    </div>
+</form>
+<br />
+                    <h3>Kütüphane Konumu</h3>
+                    <div style="width: 100%"><iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=%C3%87ay%C4%B1r%20Cad.%20No:9%20Ata%C5%9Fehir%20+(Omicron%20Bili%C5%9Fim%20Hizmetleri%20Tic.%20Ltd.%20%C5%9Eti.)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/wearable-gps/">gps smartwatches</a></iframe></div>
+

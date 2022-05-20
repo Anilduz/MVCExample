@@ -1,0 +1,87 @@
+﻿@model List<Book>
+
+
+@{
+    ViewData["Title"] = "Action Page Test";
+}
+
+@*
+    <form asp-controller="Home" asp-action="GetIp">
+    <div class="form-control">
+
+    <h1>Ip Adress: @ViewBag.ipadress</h1>
+    <br />
+    <button type="submit">Get My Ip Adress</button>
+
+
+    </div>
+*@
+
+<br />
+<br />
+<div>
+
+    <table id="gridView1">
+        <tr>
+            <th>Id</th>
+            <th>Barcode</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Year</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Barcode</td>
+                <td>@item.Name</td>
+                <td>@item.Category</td>
+                <td>@item.Author</td>
+                <td>@item.Price</td>
+                <td>@item.Year</td>
+            </tr>
+        }
+    </table>
+    <br /><hr style="block-size:3px" />
+
+    <h1>Kitap Ekle</h1>
+    <div>
+        <form asp-controller="Home" asp-action="AddBook">
+            <label for="fname">Id:</label><br>
+            <input type="text" class="form-control" id="id" name="id" value="" placeholder="Id"><br>
+
+            <label for="fname">Book Barcode:</label><br>
+            <input type="text" class="form-control" id="Barcode" name="Barcode" value="" placeholder="Book Barcode"><br>
+
+            <label for="fname">Book Name:</label><br>
+            <input type="text" class="form-control" id="Name" name="Name" value="" placeholder="Book Name"><br>
+
+            <label for="fname">Book Category:</label><br>
+            <input type="text" class="form-control" id="Category" name="Category" value="Category" placeholder="Book Category"><br>
+
+            <label for="fname">Book Author:</label><br>
+            <input type="text" class="form-control" id="Author" name="Author" value="" placeholder="Book Author"><br>
+
+            <label for="fname">Book Price:</label><br>
+            <input type="text" class="form-control" class="form-control" id="Price" name="bookPrice" value="" placeholder="Eserin maliyeti var ise giriniz. Bağış ile ekleniyorsa bu alanı boş bırakın."><br>
+
+            <label for="fname">Book Year:</label><br>
+            <input type="datetime-local" class="form-control" id="Year" name="Year" value="" placeholder="Book Year"><br>
+
+            <br />
+            <input id="Submit1" type="submit" value="submit" class="btn btn-primary" />
+
+        </form>
+        <br />
+    </div>
+    <br />
+    <bold>Kitabı kütüphaneye eklemek için lütfen bilgileri girip kaydedin.</bold>
+
+    <br />
+    <h3>Kütüphane Konumu</h3>
+                    <div style="width: 100%"><iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=%C3%87ay%C4%B1r%20Cad.%20No:9%20Ata%C5%9Fehir%20+(Omicron%20Bili%C5%9Fim%20Hizmetleri%20Tic.%20Ltd.%20%C5%9Eti.)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/wearable-gps/">gps smartwatches</a></iframe></div>
+
+
+</div>
